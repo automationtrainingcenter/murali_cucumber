@@ -26,7 +26,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = { "src/test/java/features" }, glue = {
 		"stepdefinitions" }, dryRun = false, monochrome = true, plugin = { "pretty", "html:target/reports/web",
-				"json:target/reports/json/report.json" }, tags = { "@data" }
+				"json:target/reports/json/report.json" }, tags = { "@rc_valid" }
 
 )
 
