@@ -1,0 +1,18 @@
+[
+	{
+		"roleName": "newJsonRoleOne",
+		"roleType": "E"
+	},
+	{
+		"roleName": "newJsonRoleTwo",
+		"roleType": "E"
+	},
+	{
+		"roleName": "newJsonRoleThree",
+		"roleType": "E"
+	},
+	{
+		"roleName": "newJsonRoleFour",
+		"roleType": "E"
+	}
+]

@@ -22,21 +22,23 @@ public class LoginSteps {
 	WebDriverWait wait;
 	private Scenario scenario;
 	private BankHomePage bankHomePageObj;
+	private CommonSteps commonSteps;
+
+	public LoginSteps(CommonSteps commonSteps) {
+		this.commonSteps = commonSteps;
+		this.driver = this.commonSteps.getDriver();
+	}
 
 	@Before
 	public void launch(Scenario scenario) {
 		this.scenario = scenario;
-		System.setProperty("webdriver.chrome.driver", ".//drivers//chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.get("http://primusbank.qedgetech.com/");
-		driver.manage().window().maximize();
 		wait = new WebDriverWait(driver, 20);
 
 	}
 
 	@After
 	public void tearDown(Scenario scenario) {
-		driver.close();
+		this.commonSteps.close();
 		scenario.write("browser closed");
 	}
 

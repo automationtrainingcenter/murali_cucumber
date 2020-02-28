@@ -23,6 +23,10 @@ public class RoleInsertionPage {
 	@FindBy(id = "btninsert")
 	private WebElement submitButton;
 
+	// reset
+	@FindBy(id = "Btn_Reset")
+	private WebElement resetButton;
+
 	// constructor
 	public RoleInsertionPage(WebDriver driver) {
 		this.driver = driver;
@@ -44,6 +48,17 @@ public class RoleInsertionPage {
 	public Alert clickSubmit() {
 		this.submitButton.click();
 		return driver.switchTo().alert();
+	}
+	
+	// click on reset button
+	public RoleInsertionPage clickReset() {
+		this.resetButton.click();
+		return PageFactory.initElements(driver, RoleInsertionPage.class);
+	}
+
+	// verify form is empty or not
+	public boolean isFormEmpty() {
+		return this.roleName.getAttribute("value").isEmpty();
 	}
 
 }
